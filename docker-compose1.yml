@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+
+  chromium:
+    build: .
+    command: npx playwright test --project=chrome
+    volumes:
+      - .:/app
+
+  firefox:
+    build: .
+    command: npx playwright test --project=firefox
+    volumes:
+      - .:/app
+
+ 

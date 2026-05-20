@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1076","@web playwright test: password validation checking","","2026-05-11","passed","2026-05-11","","PassthenoteTest.spec.js","",""
+"","940","@web playwright test: Valid Login","","2026-05-11","passed","2026-05-11","","PassthenoteTest.spec.js","",""
+"","1760","@web playwright test: Child window handling","","2026-05-11","passed","2026-05-11","","demoqa_windowHandling.spec.js","",""

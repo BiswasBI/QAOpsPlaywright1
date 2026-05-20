@@ -1,0 +1,22 @@
+[{
+   
+
+    "username":"tester@passthenote.com",
+    "password":"Tester@123",
+    "email":"tester1@passthenote.com",
+    "productName1":"Bluetooth Headphones",
+    "productName2":"Desk Lamp LED"
+
+},
+{
+   
+
+    "username":"admin@passthenote.com",
+    "password":"Admin@123",
+    "email":"tester2@passthenote.com",
+    "productName1":"Mechanical Keyboard",
+    "productName2":"USB-C Cable"
+
+}
+
+]

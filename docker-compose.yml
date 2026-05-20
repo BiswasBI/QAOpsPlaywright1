@@ -1,0 +1,22 @@
+services:
+
+  pw1:
+    build: .
+    environment:
+      SHARD: 1/3
+      WORKERS: 4
+    ipc: host
+
+  pw2:
+    build: .
+    environment:
+      SHARD: 2/3
+      WORKERS: 4
+    ipc: host
+
+  pw3:
+    build: .
+    environment:
+      SHARD: 3/3
+      WORKERS: 4
+    ipc: host
