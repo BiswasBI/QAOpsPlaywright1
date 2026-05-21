@@ -52,11 +52,11 @@ test.only('playwright test: Valid Login', async ({page})=>
 });
 
 
-test('playwright test: Navigates to Products', async ({page})=> //annonimous function means function not having any name
+test.only('playwright test: Navigates to Products', async ({page})=> //annonimous function means function not having any name
 {
    const cartTitles= page.locator('[data-testid*="product"] h3');
    await page.goto("https://www.passthenote.com/auth/login");
-   console.log(await page.title());
+   //console.log(await page.title());
    await expect(page).toHaveTitle("PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site");
 
    await page.locator('#email').fill('tester@passthenote.com');
