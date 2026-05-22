@@ -17,8 +17,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: npx cucumber-js features/ValidLogin.feature --parallel 3 --exit --format html:cucumber-report.html
-      run: npx playwright test
+    - name: Run Playwright tests
+      run: npx cucumber-js features/ValidLogin.feature --parallel 3 --exit --format html:cucumber-report.html
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
