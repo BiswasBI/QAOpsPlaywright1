@@ -32,7 +32,7 @@ jobs:
 
      - name: Tag Image
        run: |
-         docker tag playwright-tests:latest \
+         docker tag ab\playwright-tests:latest \
          ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
 
      - name: Push Image
