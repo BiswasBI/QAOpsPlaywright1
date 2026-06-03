@@ -75,12 +75,12 @@ jobs:
      - name: Run Fargate Task
        run: |
          aws ecs run-task \
-           --cluster ${{ secrets.ECS_CLUSTER }} \
+           --cluster ${{ vars.ECS_CLUSTER }} \
            --launch-type FARGATE \
            --task-definition playwright-tests:${{ steps.taskdef.outputs.revision }} \
            --network-configuration \
            "awsvpcConfiguration={
-             subnets=[${{ secrets.SUBNET_ID }}],
+             subnets=[${{ vars.SUBNET_ID }}],
              securityGroups=[${{ secrets.SECURITY_GROUP_ID }}],
              assignPublicIp=ENABLED
            }"
