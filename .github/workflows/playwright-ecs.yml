@@ -32,13 +32,13 @@ jobs:
 
      - name: Tag Image
        run: |
-         docker tag ab\playwright-tests:latest \
-         ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+         docker tag playwright-tests:latest \
+         ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ github.sha }}
 
      - name: Push Image
        run: |
          docker push \
-         ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+         ${{ steps.login-ecr.outputs.registry }}/${{ var.ECR_REPOSITORY }}:${{ github.sha }}
 
      - name: Update Task Definition
        run: |
@@ -46,7 +46,7 @@ jobs:
          --task-definition playwright-tests \
          --query taskDefinition > task-definition.json
 
-         jq --arg IMAGE "${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}" \
+         jq --arg IMAGE "${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ github.sha }}" \
          '.containerDefinitions[0].image=$IMAGE
          | del(
            .taskDefinitionArn,
