@@ -1,3 +1,8 @@
+resource "aws_s3_bucket" "playwright_reports" {
+  bucket = "my-playwright-reports-bucket"
+}
+
+
 resource "aws_iam_policy" "playwright_s3" {
   name = "${var.project_name}-s3-policy"
 
