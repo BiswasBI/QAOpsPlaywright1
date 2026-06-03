@@ -1,14 +1,15 @@
 const {test, expect, request}=require('@playwright/test')
-const loginPayload={userEmail:"arpitabkeya25@gmail.com",userPassword:"test1234"}; //storing json dada as javascript object
+const loginPayload={email:"tester@passthenote.com",password:"Tester@123"}; //storing json dada as javascript object
 let token;
+
 test.beforeAll(async()=>
 {
    const apiContext= await request.newContext();
-   const loginResponse=await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login",
+   const loginResponse=await apiContext.post("https://passthenote-backend-juod.onrender.com/api/v1/auth/login",
     {
         data:loginPayload
     })
-   // console.log(loginResponse);
+    console.log(loginResponse);
     expect(loginResponse.ok()).toBeTruthy();
     const loginResponseJson=await loginResponse.json();
     token=loginResponseJson.token;
@@ -23,9 +24,10 @@ test.beforeEach(()=>
 
 test('playwright test: End to End scenario', async ({page})=> //annonimous function means function not having any name
 {
-    
+    //await page.goto("https://www.passthenote.com");
    //Insert javascript to save cookie:
-  // await page.goto("https://www.passthenote.com/app");
+   const apiUtils = new APiUtils(apiContext,loginPayload);
+   token = await apiUtils.getToken();
    await page.addInitScript(value => 
    {
     window.localStorage.setItem('token', value);
@@ -42,9 +44,8 @@ test('playwright test: End to End scenario', async ({page})=> //annonimous funct
    await page.locator("[type='submit']").click();
    await page.waitForLoadState('networkidle');*/
 
-   await page.goto("https://rahulshettyacademy.com/client");
-   await page.pause();
-  /* const products= page.locator('[data-testid*="product"]');
+   await page.goto("https://www.passthenote.com/app");
+   const products= page.locator('[data-testid*="product"]');
    const productTitle= page.locator('[data-testid*="product"] h3');
    const productName='Bluetooth Headphones';
    const productName2='Desk Lamp LED';
@@ -105,5 +106,5 @@ test('playwright test: End to End scenario', async ({page})=> //annonimous funct
    }
    //await page.pause();
    //await rows.first().locator('button').click();
-   */
+   
 });

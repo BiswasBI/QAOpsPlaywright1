@@ -1,55 +1,37 @@
-const {test, expect, request}=require('@playwright/test')
-const loginPayload={email:"tester@passthenote.com",password:"Tester@123"}; //storing json dada as javascript object
-let token;
-test.beforeAll(async()=>
+const {test,expect}=require('@playwright/test');
+let webContext;
+test.beforeAll(async({browser})=>
 {
-   const apiContext= await request.newContext();
-   const loginResponse=await apiContext.post("https://passthenote-backend-juod.onrender.com/api/v1/auth/login",
-    {
-        data:loginPayload
-    })
-    console.log(loginResponse);
-    expect(loginResponse.ok()).toBeTruthy();
-    const loginResponseJson=await loginResponse.json();
-    token=loginResponseJson.token;
-    console.log(token);
-});
-
-test.beforeEach(()=>
-{
-
-});
-
-
-test('playwright test: End to End scenario', async ({page})=> //annonimous function means function not having any name
-{
-    //await page.goto("https://www.passthenote.com");
-   //Insert javascript to save cookie:
-   await page.addInitScript(value => 
-   {
-    window.localStorage.setItem('token', value);
-
-   }, token);
-
-
-    /*await page.goto("https://www.passthenote.com/auth/login");
-   console.log(await page.title());
-   await expect(page).toHaveTitle("PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site");
-   const email="tester@passthenote.com";
-   await page.locator('#email').fill(email);
+   const context= await browser.newContext();
+    const page= await context.newPage();
+    await page.goto("https://www.passthenote.com/auth/login");
+   await page.locator('#email').fill('tester@passthenote.com');
    await page.locator("[type='password']").fill('Tester@123');
    await page.locator("[type='submit']").click();
-   await page.waitForLoadState('networkidle');*/
+   console.log(await page.title());
+   await expect(page).toHaveTitle("PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site");
+await page.waitForTimeout(3000);
+   await context.storageState({path:'state.json'});
+   webContext= await browser.newContext({storageState:'state.json'});
 
-   await page.goto("https://www.passthenote.com/app");
+});
+
+
+test.only('@api playwright test: End to End scenario', async ()=> //annonimous function means function not having any name
+{
+    const page=await webContext.newPage();
+    await page.goto("https://www.passthenote.com/app");
    const products= page.locator('[data-testid*="product"]');
    const productTitle= page.locator('[data-testid*="product"] h3');
    const productName='Bluetooth Headphones';
    const productName2='Desk Lamp LED';
+   
+   
    await page.locator('text=Applicatio').hover();
    await page.locator('text=E-Commer').click();
    await expect(page).toHaveURL("https://www.passthenote.com/app/products",{ timeout: 10000 });
-   //await page.waitForLoadState('networkidle');  
+
+   await page.waitForLoadState('networkidle');
    await productTitle.first().waitFor(); //-it will not work because of multiple elements
    const allTitles=await productTitle.allTextContents(); //- it will not show exceotion if element not loaded because it return an array, just return blank array list
    console.log(allTitles);

@@ -9,4 +9,4 @@ COPY . .
 
 ENV CI=true
 
-CMD sh -c "npx playwright test --config=playwright.config1.js --shard=$SHARD"
+CMD sh -c "npx playwright test --shard=$SHARD"

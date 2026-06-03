@@ -1,0 +1,86 @@
+name: Playwright ECS
+
+on:
+ workflow_dispatch:
+
+jobs:
+ deploy-and-run:
+   runs-on: ubuntu-latest
+
+   permissions:
+     contents: read
+
+   steps:
+
+     - name: Checkout
+       uses: actions/checkout@v4
+
+     - name: Configure AWS
+       uses: aws-actions/configure-aws-credentials@v4
+       with:
+         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws-region: ${{ secrets.AWS_REGION }}
+
+     - name: Login to ECR
+       id: login-ecr
+       uses: aws-actions/amazon-ecr-login@v2
+
+     - name: Build Docker Image
+       run: |
+         docker build -t playwright-tests .
+
+     - name: Tag Image
+       run: |
+         docker tag playwright-tests:latest \
+         ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+
+     - name: Push Image
+       run: |
+         docker push \
+         ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}
+
+     - name: Update Task Definition
+       run: |
+         aws ecs describe-task-definition \
+         --task-definition playwright-tests \
+         --query taskDefinition > task-definition.json
+
+         jq --arg IMAGE "${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${{ github.sha }}" \
+         '.containerDefinitions[0].image=$IMAGE
+         | del(
+           .taskDefinitionArn,
+           .revision,
+           .status,
+           .requiresAttributes,
+           .compatibilities,
+           .registeredAt,
+           .registeredBy
+         )' \
+         task-definition.json > new-task.json
+
+         aws ecs register-task-definition \
+         --cli-input-json file://new-task.json
+
+     - name: Get Latest Revision
+       id: taskdef
+       run: |
+         REVISION=$(aws ecs describe-task-definition \
+           --task-definition playwright-tests \
+           --query 'taskDefinition.revision' \
+           --output text)
+
+         echo "revision=$REVISION" >> $GITHUB_OUTPUT
+
+     - name: Run Fargate Task
+       run: |
+         aws ecs run-task \
+           --cluster ${{ secrets.ECS_CLUSTER }} \
+           --launch-type FARGATE \
+           --task-definition playwright-tests:${{ steps.taskdef.outputs.revision }} \
+           --network-configuration \
+           "awsvpcConfiguration={
+             subnets=[${{ secrets.SUBNET_ID }}],
+             securityGroups=[${{ secrets.SECURITY_GROUP_ID }}],
+             assignPublicIp=ENABLED
+           }"

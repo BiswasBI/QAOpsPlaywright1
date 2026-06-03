@@ -16,7 +16,7 @@ export default defineConfig({
     ? parseInt(process.env.WORKERS)
     : 4,
 
-  retries: 2,
+  retries: 1,
 
   timeout: 40 * 1000,
 
@@ -26,32 +26,19 @@ export default defineConfig({
 
   reporter: 'html',
 
-  projects: [
-    {
-      name: 'firefox',
-      use: {
-      browserName: 'firefox',
-      headless: true,
-      screenshot: 'on',
-      trace: 'retain-on-failure'
-    }
-  },
-    
-  {
-      name: 'chrome',
+
       use: {
         browserName: 'chromium',
         headless: true,
         screenshot: 'on',
         video: 'retain-on-failure',
         permissions:['geolocation'],
-        trace: 'retain-on-failure',
+       // trace: 'retain-on-failure'
+        trace: 'on'
        // viewport: {width:720,height:720}
    }
     
-  }
 
-]
  
 
 });

@@ -1,0 +1,47 @@
+{
+  "cookies": [
+    {
+      "name": "_ga_56KL91X73B",
+      "value": "GS2.1.s1780312786$o1$g0$t1780312786$j60$l0$h0",
+      "domain": ".passthenote.com",
+      "path": "/",
+      "expires": 1814872786.787578,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1779465539.1780312787",
+      "domain": ".passthenote.com",
+      "path": "/",
+      "expires": 1814872786.788293,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.passthenote.com",
+      "localStorage": [
+        {
+          "name": "ptnUserId",
+          "value": "user-60cb4b39-0a95-4124-9c18-42955a5e7c47"
+        },
+        {
+          "name": "ptnUserName",
+          "value": "Test User"
+        },
+        {
+          "name": "ptn_session_id",
+          "value": "session-b6dd4c55-a8b5-4d30-9acf-bf242563650f"
+        },
+        {
+          "name": "ptnToken",
+          "value": "mock-token-user-60cb4b39-0a95-4124-9c18-42955a5e7c47"
+        }
+      ]
+    }
+  ]
+}

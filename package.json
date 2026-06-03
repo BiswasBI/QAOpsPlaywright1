@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "regression": "npx playwright test",
+    "apiTestdebug": "npx playwright test tests/WebAPIpart1RShetty.spec.js --headed",
     "webTest": "npx playwright test --grep @web",
     "apiTest": "npx playwright test --grep @api",
     "safariNewConfig": "npx playwright test tests/PassthenoteTest.spec.js --config playwright.config1.js --project=safari",

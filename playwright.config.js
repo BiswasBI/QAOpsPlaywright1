@@ -8,7 +8,7 @@ import { trace } from 'node:console';
 const config=({
 
   testDir: './tests', 
-  retries: 2, 
+  retries: 1, 
   timeout: 40*1000,
 
   expect: {
@@ -21,7 +21,8 @@ const config=({
     browserName: 'chromium',
     headless: true,
     screenshot: 'on',
-    trace: 'retain-on-failure'
+    trace: 'on'
+   // trace: 'retain-on-failure'
     
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
  
