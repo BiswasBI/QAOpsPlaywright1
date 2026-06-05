@@ -21,8 +21,8 @@ const config=({
     browserName: 'chromium',
     headless: true,
     screenshot: 'on',
-    trace: 'on'
-   // trace: 'retain-on-failure'
+    //trace: 'on'
+    trace: 'retain-on-failure'
     
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
  
