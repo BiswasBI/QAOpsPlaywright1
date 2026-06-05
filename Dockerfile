@@ -25,4 +25,4 @@ COPY upload-report.sh ./
 RUN chmod +x upload-report.sh
 
 #CMD ["sh", "upload-report.sh"]
-CMD ["sh", "-c", "npx playwright test --grep @web --shard=$SHARD && ./upload-report.sh"]
+CMD ["sh", "-c", "./upload-report.sh"]
