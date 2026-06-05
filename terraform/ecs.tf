@@ -27,6 +27,14 @@ resource "aws_ecs_task_definition" "playwright" {
           value = aws_s3_bucket.playwright_reports.bucket
         }
       ]
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = "/ecs/playwright-tests"
+          awslogs-region        = "eu-north-1"
+          awslogs-stream-prefix = "ecs"
+        }
+      }
     }
   ])
 }
