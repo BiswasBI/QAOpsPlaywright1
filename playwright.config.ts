@@ -28,7 +28,7 @@ export default defineConfig({
 
 
       use: {
-        browserName: 'chromium',
+        browserName: 'firefox',
         headless: true,
         screenshot: 'on',
         video: 'retain-on-failure',
