@@ -24,7 +24,10 @@ export default defineConfig({
     timeout: 5000,
   },
 
-  reporter: 'html',
+  reporter: [
+    ['html', { outputFolder: 'playwright-report' }],
+    ['json', { outputFile: 'report.json' }]
+  ],
 
 
       use: {

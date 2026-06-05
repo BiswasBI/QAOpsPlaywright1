@@ -30,3 +30,8 @@ resource "aws_iam_role_policy_attachment" "playwright_s3" {
   role       = aws_iam_role.ecs_task_role.name
   policy_arn = aws_iam_policy.playwright_s3.arn
 }
+
+Resource = [
+  aws_s3_bucket.playwright_reports.arn,
+  "${aws_s3_bucket.playwright_reports.arn}/*"
+]
