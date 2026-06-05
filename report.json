@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "",
         "name": "",
@@ -84,7 +84,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 38076,
+                  "duration": 5034,
                   "errors": [],
                   "stdout": [
                     {
@@ -93,9 +93,20 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-05T13:14:24.590Z",
+                  "startTime": "2026-06-05T13:30:55.428Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\demoqa_windowHandling--web-f5a4a--test-Child-window-handling\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\demoqa_windowHandling--web-f5a4a--test-Child-window-handling\\test-finished-2.png"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -107,407 +118,15 @@
           "column": 6
         }
       ]
-    },
-    {
-      "title": "PassthenoteTest.spec.js",
-      "file": "PassthenoteTest.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "browser context playwright test",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 10602,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Google\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-05T13:14:24.616Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-browser-context-playwright-test\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "d796f18a65b1a78a9814-b66a4ac2713e1afbd1b0",
-          "file": "PassthenoteTest.spec.js",
-          "line": 6,
-          "column": 6
-        },
-        {
-          "title": "playwright test: password validation checking",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "timedOut",
-                  "duration": 53710,
-                  "error": {
-                    "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m",
-                    "stack": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
-                  },
-                  "errors": [
-                    {
-                      "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
-                    }
-                  ],
-                  "stdout": [
-                    {
-                      "text": "tester@passthenote.com\n"
-                    },
-                    {
-                      "text": "Please fill out this field.\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-05T13:14:24.716Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-password-validation-checking\\test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-password-validation-checking\\video.webm"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-password-validation-checking\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-password-validation-checking\\trace.zip"
-                    }
-                  ]
-                },
-                {
-                  "workerIndex": 4,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 33671,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "tester@passthenote.com\n"
-                    },
-                    {
-                      "text": "Please fill out this field.\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 1,
-                  "startTime": "2026-06-05T13:15:30.999Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-password-validation-checking-retry1\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "flaky"
-            }
-          ],
-          "id": "d796f18a65b1a78a9814-99116e11eac164ae3cbe",
-          "file": "PassthenoteTest.spec.js",
-          "line": 17,
-          "column": 6
-        },
-        {
-          "title": "playwright test: Valid Login",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 45375,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-05T13:14:24.587Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-Valid-Login\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "d796f18a65b1a78a9814-5f70ba3c8973a0fc0e25",
-          "file": "PassthenoteTest.spec.js",
-          "line": 40,
-          "column": 6
-        },
-        {
-          "title": "playwright test: Navigates to Products",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 43718,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "[\n  \u001b[32m'Bluetooth Headphones'\u001b[39m,\n  \u001b[32m'Desk Lamp LED'\u001b[39m,\n  \u001b[32m'Desk Mat'\u001b[39m,\n  \u001b[32m'Gaming Mouse'\u001b[39m,\n  \u001b[32m'Laptop Stand'\u001b[39m,\n  \u001b[32m'Mechanical Keyboard'\u001b[39m,\n  \u001b[32m'Microphone USB'\u001b[39m,\n  \u001b[32m'Monitor 27\"'\u001b[39m,\n  \u001b[32m'Power Bank 20000mAh'\u001b[39m,\n  \u001b[32m'USB-C Cable'\u001b[39m,\n  \u001b[32m'Wireless Charger'\u001b[39m,\n  \u001b[32m'Wireless Mouse'\u001b[39m\n]\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-05T13:14:38.512Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-Navigates-to-Products\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTest-playwright-test-Navigates-to-Products\\test-finished-2.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "d796f18a65b1a78a9814-6f0218ceb2ec21cdb878",
-          "file": "PassthenoteTest.spec.js",
-          "line": 55,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "title": "WebAPIpart2.spec.js",
-      "file": "WebAPIpart2.spec.js",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "@api playwright test: End to End scenario",
-          "ok": true,
-          "tags": [
-            "api"
-          ],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "timedOut",
-                  "duration": 41799,
-                  "error": {
-                    "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m",
-                    "stack": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
-                  },
-                  "errors": [
-                    {
-                      "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
-                    }
-                  ],
-                  "stdout": [
-                    {
-                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
-                    },
-                    {
-                      "text": "[\n  \u001b[32m'Bluetooth Headphones'\u001b[39m,\n  \u001b[32m'Desk Lamp LED'\u001b[39m,\n  \u001b[32m'Desk Mat'\u001b[39m,\n  \u001b[32m'Gaming Mouse'\u001b[39m,\n  \u001b[32m'Laptop Stand'\u001b[39m,\n  \u001b[32m'Mechanical Keyboard'\u001b[39m,\n  \u001b[32m'Microphone USB'\u001b[39m,\n  \u001b[32m'Monitor 27\"'\u001b[39m,\n  \u001b[32m'Power Bank 20000mAh'\u001b[39m,\n  \u001b[32m'USB-C Cable'\u001b[39m,\n  \u001b[32m'Wireless Charger'\u001b[39m,\n  \u001b[32m'Wireless Mouse'\u001b[39m\n]\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "product 1 is added to cart\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "product 2 is added to cart\n"
-                    },
-                    {
-                      "text": "row count=1\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-05T13:15:09.200Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\test-finished-3.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\test-finished-2.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\test-failed-4.png"
-                    },
-                    {
-                      "name": "error-context",
-                      "contentType": "text/markdown",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\error-context.md"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario\\trace.zip"
-                    }
-                  ]
-                },
-                {
-                  "workerIndex": 5,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 11871,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
-                    },
-                    {
-                      "text": "[\n  \u001b[32m'Bluetooth Headphones'\u001b[39m,\n  \u001b[32m'Desk Lamp LED'\u001b[39m,\n  \u001b[32m'Desk Mat'\u001b[39m,\n  \u001b[32m'Gaming Mouse'\u001b[39m,\n  \u001b[32m'Laptop Stand'\u001b[39m,\n  \u001b[32m'Mechanical Keyboard'\u001b[39m,\n  \u001b[32m'Microphone USB'\u001b[39m,\n  \u001b[32m'Monitor 27\"'\u001b[39m,\n  \u001b[32m'Power Bank 20000mAh'\u001b[39m,\n  \u001b[32m'USB-C Cable'\u001b[39m,\n  \u001b[32m'Wireless Charger'\u001b[39m,\n  \u001b[32m'Wireless Mouse'\u001b[39m\n]\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "product 1 is added to cart\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "product 2 is added to cart\n"
-                    },
-                    {
-                      "text": "row count=1\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 1,
-                  "startTime": "2026-06-05T13:16:28.531Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario-retry1\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\WebAPIpart2--api-playwright-test-End-to-End-scenario-retry1\\test-finished-2.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "flaky"
-            }
-          ],
-          "id": "5a637503b71cdd790681-aefd0bcaa61011bf6256",
-          "file": "WebAPIpart2.spec.js",
-          "line": 20,
-          "column": 6
-        }
-      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-05T13:14:22.761Z",
-    "duration": 142736.411,
-    "expected": 4,
+    "startTime": "2026-06-05T13:30:54.274Z",
+    "duration": 6628.738,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
-    "flaky": 2
+    "flaky": 0
   }
 }
