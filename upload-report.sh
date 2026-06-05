@@ -3,7 +3,7 @@
 set -e
 
 echo "Running Playwright tests..."
-CMD sh -c "npx playwright test --grep @web --shard=$SHARD"
+CMD sh -c "npx playwright test --grep @web"
 
 echo "Uploading report to S3..."
 
