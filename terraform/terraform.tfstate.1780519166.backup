@@ -1,0 +1,363 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.5",
+  "serial": 16,
+  "lineage": "cd7d49bc-2228-5d5e-2e65-55e2de07f97e",
+  "outputs": {
+    "ecr_repository": {
+      "value": "playwright-tests",
+      "type": "string"
+    },
+    "ecr_repository_url": {
+      "value": "114403655647.dkr.ecr.eu-central-1.amazonaws.com/playwright-tests",
+      "type": "string"
+    },
+    "ecs_cluster": {
+      "value": "playwright-tests",
+      "type": "string"
+    },
+    "security_group_id": {
+      "value": "sg-0cad9217fa03d599a",
+      "type": "string"
+    },
+    "task_definition_family": {
+      "value": "playwright-tests",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_cloudwatch_log_group",
+      "name": "playwright",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:eu-central-1:114403655647:log-group:/ecs/playwright",
+            "id": "/ecs/playwright",
+            "kms_key_id": "",
+            "log_group_class": "STANDARD",
+            "name": "/ecs/playwright",
+            "name_prefix": "",
+            "retention_in_days": 7,
+            "skip_destroy": false,
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecr_lifecycle_policy",
+      "name": "playwright",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "playwright-tests",
+            "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 20 images\",\"rulePriority\":1,\"selection\":{\"countNumber\":20,\"countType\":\"imageCountMoreThan\",\"tagStatus\":\"any\"}}]}",
+            "registry_id": "114403655647",
+            "repository": "playwright-tests"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_ecr_repository.playwright"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecr_repository",
+      "name": "playwright",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecr:eu-central-1:114403655647:repository/playwright-tests",
+            "encryption_configuration": [
+              {
+                "encryption_type": "AES256",
+                "kms_key": ""
+              }
+            ],
+            "force_delete": null,
+            "id": "playwright-tests",
+            "image_scanning_configuration": [
+              {
+                "scan_on_push": true
+              }
+            ],
+            "image_tag_mutability": "MUTABLE",
+            "name": "playwright-tests",
+            "registry_id": "114403655647",
+            "repository_url": "114403655647.dkr.ecr.eu-central-1.amazonaws.com/playwright-tests",
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_ecs_cluster",
+      "name": "playwright",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ecs:eu-central-1:114403655647:cluster/playwright-tests",
+            "configuration": [],
+            "id": "arn:aws:ecs:eu-central-1:114403655647:cluster/playwright-tests",
+            "name": "playwright-tests",
+            "service_connect_defaults": [],
+            "setting": [
+              {
+                "name": "containerInsights",
+                "value": "disabled"
+              }
+            ],
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_task_execution_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::114403655647:role/playwright-tests-execution-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T20:15:04Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "playwright-tests-execution-role",
+            "inline_policy": [],
+            "managed_policy_arns": [],
+            "max_session_duration": 3600,
+            "name": "playwright-tests-execution-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AROARVIX5H7P3GSFATXD5"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ecs_task_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::114403655647:role/playwright-tests-task-role",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-06-03T20:15:04Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "playwright-tests-task-role",
+            "inline_policy": [],
+            "managed_policy_arns": [],
+            "max_session_duration": 3600,
+            "name": "playwright-tests-task-role",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": null,
+            "tags_all": {},
+            "unique_id": "AROARVIX5H7P7IJKYXWAY"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "ecs_execution",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "playwright-tests-execution-role-20260603201505278400000001",
+            "policy_arn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+            "role": "playwright-tests-execution-role"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ecs_task_execution_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "ecs_tasks",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-central-1:114403655647:security-group/sg-0cad9217fa03d599a",
+            "description": "Playwright ECS tasks",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0cad9217fa03d599a",
+            "ingress": [],
+            "name": "playwright-tests-sg",
+            "name_prefix": "",
+            "owner_id": "114403655647",
+            "revoke_rules_on_delete": false,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "vpc_id": "vpc-056d98dcea29ebee7"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0=",
+          "dependencies": [
+            "aws_vpc.playwright"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "public",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-central-1:114403655647:subnet/subnet-0b6cbc31487243bb2",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "eu-central-1a",
+            "availability_zone_id": "euc1-az2",
+            "cidr_block": "10.0.1.0/24",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0b6cbc31487243bb2",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": true,
+            "outpost_arn": "",
+            "owner_id": "114403655647",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "vpc_id": "vpc-056d98dcea29ebee7"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "aws_vpc.playwright"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "playwright",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-central-1:114403655647:vpc/vpc-056d98dcea29ebee7",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/16",
+            "default_network_acl_id": "acl-005184cacd92caa50",
+            "default_route_table_id": "rtb-0ca19fa774f6959e9",
+            "default_security_group_id": "sg-09cd781778e3af154",
+            "dhcp_options_id": "dopt-026fb4017f06ee71b",
+            "enable_dns_hostnames": true,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-056d98dcea29ebee7",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-0ca19fa774f6959e9",
+            "owner_id": "114403655647",
+            "tags": {
+              "Name": "playwright-tests-vpc"
+            },
+            "tags_all": {
+              "Name": "playwright-tests-vpc"
+            }
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

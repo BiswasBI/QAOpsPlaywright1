@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "playwright_reports" {
-  bucket = "my-playwright-reports-bucket"
+  bucket = "my-playwright-reports-bucket-114403655647"
 }
 
 
