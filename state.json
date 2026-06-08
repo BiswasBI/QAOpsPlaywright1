@@ -2,20 +2,20 @@
   "cookies": [
     {
       "name": "_ga_56KL91X73B",
-      "value": "GS2.1.s1780665389$o1$g0$t1780665389$j60$l0$h0",
+      "value": "GS2.1.s1780907077$o1$g0$t1780907077$j60$l0$h0",
       "domain": ".passthenote.com",
       "path": "/",
-      "expires": 1815225389.488341,
+      "expires": 1815467077.37515,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga",
-      "value": "GA1.1.465440944.1780665389",
+      "value": "GA1.1.1665340926.1780907077",
       "domain": ".passthenote.com",
       "path": "/",
-      "expires": 1815225389.488917,
+      "expires": 1815467077.375593,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -27,7 +27,7 @@
       "localStorage": [
         {
           "name": "ptnUserId",
-          "value": "user-6f100b9a-13fb-4e14-a207-bf39baa37648"
+          "value": "user-17ac42ce-6d47-44c7-86a6-25c0c4c2cc63"
         },
         {
           "name": "ptnUserName",
@@ -35,15 +35,15 @@
         },
         {
           "name": "ptn_session_id",
-          "value": "session-bd4ce780-777c-466f-83d4-401fbb681902"
+          "value": "session-5d94a49a-54a9-47dc-ba83-9e8620b12b20"
         },
         {
           "name": "ptnToken",
-          "value": "mock-token-user-6f100b9a-13fb-4e14-a207-bf39baa37648"
+          "value": "mock-token-user-17ac42ce-6d47-44c7-86a6-25c0c4c2cc63"
         },
         {
           "name": "ptn-notifications",
-          "value": "[{\"id\":\"1\",\"type\":\"order\",\"title\":\"Order Confirmed #PTN-2547\",\"message\":\"Your order for Premium Wireless Headphones ($299.99) has been confirmed and is being processed.\",\"timestamp\":\"2026-06-05T13:11:32.178Z\",\"read\":false,\"link\":\"/app/orders\"},{\"id\":\"2\",\"type\":\"wishlist\",\"title\":\"Price Drop Alert 🎉\",\"message\":\"Mechanical Keyboard in your wishlist is now $139.99 (was $159.99). Save $20!\",\"timestamp\":\"2026-06-05T12:46:32.178Z\",\"read\":false,\"link\":\"/app/wishlist\"},{\"id\":\"3\",\"type\":\"note\",\"title\":\"New Comment on Your Note\",\"message\":\"admin commented: \\\"Great tips! I also recommend using data-testid for better selector stability.\\\"\",\"timestamp\":\"2026-06-05T12:16:32.178Z\",\"read\":false,\"link\":\"/notes\"},{\"id\":\"4\",\"type\":\"system\",\"title\":\"New Practice Challenge Available\",\"message\":\"Try \\\"Flaky Network Handling\\\" - Test your automation against unstable connections. Difficulty: Medium\",\"timestamp\":\"2026-06-05T11:16:32.178Z\",\"read\":true,\"link\":\"/practice-challenges\"},{\"id\":\"5\",\"type\":\"order\",\"title\":\"Order Shipped #PTN-2541\",\"message\":\"Your USB-C Hub has been shipped via FedEx. Tracking: FDX1234567890. Expected delivery: Dec 10, 2025\",\"timestamp\":\"2026-06-04T13:16:32.178Z\",\"read\":true,\"link\":\"/app/orders\"},{\"id\":\"6\",\"type\":\"wishlist\",\"title\":\"Back in Stock!\",\"message\":\"LED Desk Lamp is now available. Only 3 units left. Order before it's gone again!\",\"timestamp\":\"2026-06-03T13:16:32.178Z\",\"read\":true,\"link\":\"/app/products/prod-007\"},{\"id\":\"7\",\"type\":\"note\",\"title\":\"Your Note Got 10 Likes ❤️\",\"message\":\"\\\"Playwright Trace Debugging Tips\\\" reached 10 likes! Keep sharing valuable content.\",\"timestamp\":\"2026-06-02T13:16:32.178Z\",\"read\":true,\"link\":\"/notes\"},{\"id\":\"8\",\"type\":\"system\",\"title\":\"Welcome to PassTheNote! 🚀\",\"message\":\"Start your testing journey: Explore products, create notes, and practice automation scenarios.\",\"timestamp\":\"2026-06-01T13:16:32.178Z\",\"read\":true,\"link\":\"/practice-challenges\"}]"
+          "value": "[{\"id\":\"1\",\"type\":\"order\",\"title\":\"Order Confirmed #PTN-2547\",\"message\":\"Your order for Premium Wireless Headphones ($299.99) has been confirmed and is being processed.\",\"timestamp\":\"2026-06-08T08:19:40.050Z\",\"read\":false,\"link\":\"/app/orders\"},{\"id\":\"2\",\"type\":\"wishlist\",\"title\":\"Price Drop Alert 🎉\",\"message\":\"Mechanical Keyboard in your wishlist is now $139.99 (was $159.99). Save $20!\",\"timestamp\":\"2026-06-08T07:54:40.050Z\",\"read\":false,\"link\":\"/app/wishlist\"},{\"id\":\"3\",\"type\":\"note\",\"title\":\"New Comment on Your Note\",\"message\":\"admin commented: \\\"Great tips! I also recommend using data-testid for better selector stability.\\\"\",\"timestamp\":\"2026-06-08T07:24:40.050Z\",\"read\":false,\"link\":\"/notes\"},{\"id\":\"4\",\"type\":\"system\",\"title\":\"New Practice Challenge Available\",\"message\":\"Try \\\"Flaky Network Handling\\\" - Test your automation against unstable connections. Difficulty: Medium\",\"timestamp\":\"2026-06-08T06:24:40.050Z\",\"read\":true,\"link\":\"/practice-challenges\"},{\"id\":\"5\",\"type\":\"order\",\"title\":\"Order Shipped #PTN-2541\",\"message\":\"Your USB-C Hub has been shipped via FedEx. Tracking: FDX1234567890. Expected delivery: Dec 10, 2025\",\"timestamp\":\"2026-06-07T08:24:40.050Z\",\"read\":true,\"link\":\"/app/orders\"},{\"id\":\"6\",\"type\":\"wishlist\",\"title\":\"Back in Stock!\",\"message\":\"LED Desk Lamp is now available. Only 3 units left. Order before it's gone again!\",\"timestamp\":\"2026-06-06T08:24:40.050Z\",\"read\":true,\"link\":\"/app/products/prod-007\"},{\"id\":\"7\",\"type\":\"note\",\"title\":\"Your Note Got 10 Likes ❤️\",\"message\":\"\\\"Playwright Trace Debugging Tips\\\" reached 10 likes! Keep sharing valuable content.\",\"timestamp\":\"2026-06-05T08:24:40.050Z\",\"read\":true,\"link\":\"/notes\"},{\"id\":\"8\",\"type\":\"system\",\"title\":\"Welcome to PassTheNote! 🚀\",\"message\":\"Start your testing journey: Explore products, create notes, and practice automation scenarios.\",\"timestamp\":\"2026-06-04T08:24:40.050Z\",\"read\":true,\"link\":\"/practice-challenges\"}]"
         }
       ]
     }
