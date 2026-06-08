@@ -17,7 +17,7 @@ await page.waitForTimeout(3000);
 });
 
 
-test.only('@api playwright test: End to End scenario', async ()=> //annonimous function means function not having any name
+test('@api playwright test: End to End scenario', async ()=> //annonimous function means function not having any name
 {
     const page=await webContext.newPage();
     await page.goto("https://www.passthenote.com/app");

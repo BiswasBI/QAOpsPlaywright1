@@ -1,4 +1,5 @@
 // @ts-check
+/// <reference types="node" />
 
 import { defineConfig } from '@playwright/test';
 

@@ -1,6 +1,6 @@
 const {test,expect}=require('@playwright/test');
 
-test.only('@web playwright test: Child window handling', async ({browser})=> //annonimous function means function not having any name
+test('@web playwright test: Child window handling', async ({browser})=> //annonimous function means function not having any name
 {
 const context=await browser.newContext();  //open a browser then on that create a new context or new session or new window
 const page=await context.newPage();   //create new page on that session

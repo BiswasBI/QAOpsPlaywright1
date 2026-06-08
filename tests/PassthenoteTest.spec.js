@@ -3,7 +3,7 @@ test.describe.configure({mode: 'parallel'});
 //serial mode: id any test failed rest of the tests will not run
 //use this mode when need to run inter-dependent tests
 
-test.only('browser context playwright test', async ({browser})=> //annonimous function means function not having any name
+test('browser context playwright test', async ({browser})=> //annonimous function means function not having any name
 {
     const context=await browser.newContext(); //create new browser instance
     const page=await context.newPage(); //create actual page to automate, hit url here
@@ -14,7 +14,7 @@ test.only('browser context playwright test', async ({browser})=> //annonimous fu
 
 });
 
-test.only('playwright test: password validation checking', async ({page})=> //annonimous function means function not having any name
+test('playwright test: password validation checking', async ({page})=> //annonimous function means function not having any name
 {
     
 await page.goto("https://www.passthenote.com/auth/login");
@@ -37,7 +37,7 @@ expect(message.toLowerCase()).toMatch(/please fill (in|out) this field/);
 
 });
 
-test.only('playwright test: Valid Login', async ({page})=> 
+test('playwright test: Valid Login', async ({page})=> 
 {
     
    await page.goto("https://www.passthenote.com/auth/login");
@@ -52,7 +52,7 @@ test.only('playwright test: Valid Login', async ({page})=>
 });
 
 
-test.only('playwright test: Navigates to Products', async ({page})=> //annonimous function means function not having any name
+test('playwright test: Navigates to Products', async ({page})=> //annonimous function means function not having any name
 {
    const cartTitles= page.locator('[data-testid*="product"] h3');
    await page.goto("https://www.passthenote.com/auth/login");
