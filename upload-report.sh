@@ -4,7 +4,7 @@ set -e
 
 echo "Running Playwright tests..."
 #npx playwright test --grep @web --shard=$SHARD
-npm run regression
+npm run crossBrowserTest
 echo "Uploading report to S3..."
 
 aws s3 cp playwright-report s3://my-playwright-reports-bucket-114403655647/reports/ --recursive
