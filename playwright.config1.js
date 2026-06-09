@@ -22,38 +22,107 @@ const config=defineConfig({
   fullyParallel: true,
   projects: [
     {
-      name: 'firefox',
+      name: 'firefox-desktop',
       use: {
-      browserName: 'firefox',
-      headless: true,
-      screenshot: 'on',
-      trace: 'retain-on-failure'
-    }
-  },
-   /* {
-      name: 'safari',
+        browserName: 'firefox',
+        headless: false,
+        screenshot: 'on',
+        trace: 'retain-on-failure',
+         ...devices['Desktop Firefox']
+      }
+    },
+    {
+      name: 'firefox-mobile',
+      use: {
+        browserName: 'firefox',
+        headless: false,
+        screenshot: 'on',
+        trace: 'retain-on-failure',
+        ...devices['samsung Galaxy S20']
+      }
+    },
+     {
+      name: 'firefox-tablet',
+      use: {
+        browserName: 'firefox',
+        headless: false,
+        screenshot: 'on',
+        trace: 'retain-on-failure',
+        ...devices['iPad']
+      }
+    },
+    {
+      name: 'safari-desktop',
       use: {
       browserName: 'webkit',
-      headless: true,
+      headless: false,
       screenshot: 'on',
       trace: 'retain-on-failure',
-      ...devices['iPhone 11']
+      ...devices['Desktop safari'],
     }
-  },*/
+  },
+   {
+      name: 'safari-mobile',
+      use: {
+      browserName: 'webkit',
+      headless: false,
+      screenshot: 'on',
+      trace: 'retain-on-failure',
+      ...devices['samsung Galaxy S20']
+    }
+  },
+   {
+      name: 'safari-tablet',
+      use: {
+      browserName: 'webkit',
+      headless: false,
+      screenshot: 'on',
+      trace: 'retain-on-failure',
+      ...devices['iPad']
+    }
+  },
   {
-      name: 'chrome',
+      name: 'chrome-desktop',
       use: {
         browserName: 'chromium',
-        headless: true,
+        headless: false,
         screenshot: 'on',
         video: 'retain-on-failure',
         ignoreHttpsErrors: true,
         permissions:['geolocation'],
         trace: 'retain-on-failure',
+        ...devices['Desktop Chrome']
        // viewport: {width:720,height:720}
-   }
-    
-  }
+      }
+    },
+      {
+      name: 'chrome-mobile',
+      use: {
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'on',
+        video: 'retain-on-failure',
+        ignoreHttpsErrors: true,
+        permissions:['geolocation'],
+        trace: 'retain-on-failure',
+        ...devices['samsung Galaxy S20']
+       // viewport: {width:720,height:720}
+      }
+    },
+      {
+      name: 'chrome-tablet',
+      use: {
+        browserName: 'chromium',
+        headless: false,
+        screenshot: 'on',
+        video: 'retain-on-failure',
+        ignoreHttpsErrors: true,
+        permissions:['geolocation'],
+        trace: 'retain-on-failure',
+        ...devices['iPad']
+       // viewport: {width:720,height:720}
+      }
+    }
 
 ]
  

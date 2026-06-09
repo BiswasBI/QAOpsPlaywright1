@@ -8,6 +8,7 @@
     "apiTestdebug": "npx playwright test tests/WebAPIpart1RShetty.spec.js --headed",
     "webTest": "npx playwright test --grep @web",
     "apiTest": "npx playwright test --grep @api",
+    "crossBrowserTest": "npx playwright test --config playwright.config1.js",
     "safariNewConfig": "npx playwright test tests/PassthenoteTest.spec.js --config playwright.config1.js --project=safari",
     "chromeNewConfig": "npx playwright test tests/PassthenoteTest.spec.js --config playwright.config1.js --project=chrome",
     "webTest+allureReport": "npx playwright test --grep @web --reporter=line,allure-playwright && npx allure generate ./allure-results --clean && npx allure open ./allure-report",
