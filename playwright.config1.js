@@ -25,7 +25,7 @@ const config=defineConfig({
       name: 'firefox-desktop',
       use: {
         browserName: 'firefox',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         trace: 'retain-on-failure',
          ...devices['Desktop Firefox']
@@ -35,7 +35,7 @@ const config=defineConfig({
       name: 'firefox-mobile',
       use: {
         browserName: 'firefox',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         trace: 'retain-on-failure',
         ...devices['samsung Galaxy S20']
@@ -45,7 +45,7 @@ const config=defineConfig({
       name: 'firefox-tablet',
       use: {
         browserName: 'firefox',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         trace: 'retain-on-failure',
         ...devices['iPad']
@@ -55,7 +55,7 @@ const config=defineConfig({
       name: 'safari-desktop',
       use: {
       browserName: 'webkit',
-      headless: false,
+      headless: true,
       screenshot: 'on',
       trace: 'retain-on-failure',
       ...devices['Desktop safari'],
@@ -65,7 +65,7 @@ const config=defineConfig({
       name: 'safari-mobile',
       use: {
       browserName: 'webkit',
-      headless: false,
+      headless: true,
       screenshot: 'on',
       trace: 'retain-on-failure',
       ...devices['samsung Galaxy S20']
@@ -75,7 +75,7 @@ const config=defineConfig({
       name: 'safari-tablet',
       use: {
       browserName: 'webkit',
-      headless: false,
+      headless: true,
       screenshot: 'on',
       trace: 'retain-on-failure',
       ...devices['iPad']
@@ -85,7 +85,7 @@ const config=defineConfig({
       name: 'chrome-desktop',
       use: {
         browserName: 'chromium',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         video: 'retain-on-failure',
         ignoreHttpsErrors: true,
@@ -99,7 +99,7 @@ const config=defineConfig({
       name: 'chrome-mobile',
       use: {
         browserName: 'chromium',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         video: 'retain-on-failure',
         ignoreHttpsErrors: true,
@@ -113,7 +113,7 @@ const config=defineConfig({
       name: 'chrome-tablet',
       use: {
         browserName: 'chromium',
-        headless: false,
+        headless: true,
         screenshot: 'on',
         video: 'retain-on-failure',
         ignoreHttpsErrors: true,
