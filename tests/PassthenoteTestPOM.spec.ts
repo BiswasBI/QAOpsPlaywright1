@@ -6,7 +6,7 @@ import {customTest} from '../Utils/test-base';
 const dataset = JSON.parse(JSON.stringify(require('../Utils/placeOrderTestData.json')))
 
 for (const data of dataset) {
-   test.only(`@web playwright test: End to End scenario: ${data.username}`, async ({ page }) => //annonimous function means function not having any name
+   test.only(`playwright test: End to End scenario: ${data.username}`, async ({ page }) => //annonimous function means function not having any name
    {
 
    
