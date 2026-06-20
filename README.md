@@ -65,6 +65,59 @@ GitHub Actions CI/CD Pipeline
                     ▼
                  AWS S3
 
+I have also implemented security scanner with Playwright + AWS + Terraform + Docker + GitHub Actions setup, Below is the DevSecOps flow:
+                   Developer Commit
+                           │
+                           ▼
+                  GitHub Pull Request
+                           │
+                           ▼
+                GitHub Actions Triggered
+                           │
+       ┌───────────────────┼───────────────────┐
+       │                   │                   │
+       ▼                   ▼                   ▼
+  Secret Scan         SAST Scan         Dependency Scan
+  (Gitleaks)      (CodeQL/Semgrep)   (npm audit/Dependabot)
+       │                   │                   │
+       └───────────────────┼───────────────────┘
+                           │
+                           ▼
+                   Build Playwright
+                           │
+                           ▼
+                 Docker Image Build
+                           │
+                           ▼
+                 Container Scan
+                      (Trivy)
+                           │
+                           ▼
+             Terraform/IaC Security Scan
+                 (Checkov / tfsec)
+                           │
+                           ▼
+                   Push Image to ECR
+                           │
+                           ▼
+               Deploy Test Environment
+                 (ECS/EKS/EC2 etc.)
+                           │
+                           ▼
+               Run Playwright Tests
+                           │
+           ┌───────────────┼───────────────┐
+           │               │               │
+           ▼               ▼               ▼
+      UI Tests        API Tests      Load Tests (Under developement)
+                                        (k6/JMeter)
+           │
+           ▼
+      Generate Reports
+           │
+           ▼
+      Publish Results
+
 
 CI/CD Workflow
 Code is committed to the private GitHub repository.
@@ -115,9 +168,14 @@ Self-healing locators
 Slack and Teams notifications
 Test impact analysis
 
+This project follows a full DevSecOps approach with multi-layer security scanning.
+Detailed security scan reports and findings are documented here:
+👉 [View DevSecOps Security Report](docs/DEVSECOPS.md)
+
+
 Author
 Arpita Biswas
 Senior SDET | QA Automation Architect
 Specializations:
-Playwright | TypeScript | DevOps Testing | Terraform | AWS | GitHub Actions | AI-Powered Testing
+Playwright | TypeScript | DevOps Testing | Terraform | AWS | GitHub Actions | AI-Powered Testing | Selenium | Java | JMeter | Bitbucket
 

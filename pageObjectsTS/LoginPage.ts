@@ -2,10 +2,10 @@ import { test, expect, Locator, Page } from '@playwright/test'
 
 export class LoginPage {
 
-    page: Page;
-    userName: Locator;
-    passWord: Locator;
-    submitButton: Locator;
+    readonly page: Page;
+    readonly userName: Locator;
+    readonly passWord: Locator;
+    readonly submitButton: Locator;
 
     constructor(page: any) {
         this.page = page;
@@ -32,4 +32,5 @@ export class LoginPage {
 
 }
 
-module.exports = { LoginPage }
+// Use ES module export (TypeScript)
+export default LoginPage;

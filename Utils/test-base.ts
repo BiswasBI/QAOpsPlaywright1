@@ -1,6 +1,5 @@
 //const base = require('@playwright/test');
 import {test as baseTest} from '@playwright/test';
-import { Interface } from 'node:readline';
 interface TestDataForOrder {
     username: string;
     password: string;

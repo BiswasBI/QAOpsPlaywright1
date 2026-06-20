@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+   "type": "module",
   "scripts": {
     "regression": "npx playwright test",
     "apiTestdebug": "npx playwright test tests/WebAPIpart1RShetty.spec.js --headed",
     "webTest": "npx playwright test --grep @web",
     "apiTest": "npx playwright test --grep @api",
     "crossBrowserTest": "npx playwright test --config playwright.config1.js",
+    "parallelTest": "npx playwright test --workers=4",
     "safariNewConfig": "npx playwright test tests/PassthenoteTest.spec.js --config playwright.config1.js --project=safari",
     "chromeNewConfig": "npx playwright test tests/PassthenoteTest.spec.js --config playwright.config1.js --project=chrome",
     "webTest+allureReport": "npx playwright test --grep @web --reporter=line,allure-playwright && npx allure generate ./allure-results --clean && npx allure open ./allure-report",
@@ -19,7 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.9.3",
     "allure-commandline": "^2.40.0",
     "allure-playwright": "^3.7.2",
     "typescript": "^6.0.3"

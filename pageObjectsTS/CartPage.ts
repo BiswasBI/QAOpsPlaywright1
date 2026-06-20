@@ -1,10 +1,10 @@
 import { test, expect, Locator, Page } from '@playwright/test'
 
 export class CartPage {
-    page: Page;
-    cartItems: Locator;
-    targetItem: Locator;
-    checkoutButton: Locator;
+    readonly page: Page;
+    readonly cartItems: Locator;
+    readonly targetItem: Locator;
+    readonly checkoutButton: Locator;
 
     constructor(page:Page) {
         this.page = page;
@@ -25,4 +25,4 @@ export class CartPage {
     }
 }
 
-module.exports = { CartPage }
+export default CartPage;

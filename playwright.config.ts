@@ -33,7 +33,7 @@ export default defineConfig({
 
       use: {
         browserName: 'chromium',
-        headless: true,
+        headless: false,
         screenshot: 'on',
         video: 'retain-on-failure',
         permissions:['geolocation'],

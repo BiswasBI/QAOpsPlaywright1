@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\playwright.config.ts",
-    "rootDir": "C:/Users/abisw/OneDrive/Arpita/abPlaywrightE2Eautomation/tests",
+    "configFile": "C:\\Arpita\\abPlaywrightE2Eautomation\\playwright.config.ts",
+    "rootDir": "C:/Arpita/abPlaywrightE2Eautomation/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -11,20 +11,20 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Users/abisw/OneDrive/Arpita/abPlaywrightE2Eautomation/test-results",
+        "outputDir": "C:/Arpita/abPlaywrightE2Eautomation/test-results",
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "",
         "name": "",
-        "testDir": "C:/Users/abisw/OneDrive/Arpita/abPlaywrightE2Eautomation/tests",
+        "testDir": "C:/Arpita/abPlaywrightE2Eautomation/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -61,18 +61,15 @@
   },
   "suites": [
     {
-      "title": "PassthenoteTestPOM.spec.ts",
-      "file": "PassthenoteTestPOM.spec.ts",
+      "title": "ui\\products-ui.spec.ts",
+      "file": "ui/products-ui.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "@web playwright test: End to End scenario: tester@passthenote.com",
-          "ok": true,
-          "tags": [
-            "web",
-            "passthenote.com"
-          ],
+          "title": "Product cards render correctly",
+          "ok": false,
+          "tags": [],
           "tests": [
             {
               "timeout": 40000,
@@ -84,128 +81,138 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 19036,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
+                  "status": "failed",
+                  "duration": 935,
+                  "error": {
+                    "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14",
+                    "location": {
+                      "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                      "column": 14,
+                      "line": 8
                     },
+                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
                     {
-                      "text": "[\n  \u001b[32m'Bluetooth Headphones'\u001b[39m,\n  \u001b[32m'Desk Lamp LED'\u001b[39m,\n  \u001b[32m'Desk Mat'\u001b[39m,\n  \u001b[32m'Gaming Mouse'\u001b[39m,\n  \u001b[32m'Laptop Stand'\u001b[39m,\n  \u001b[32m'Mechanical Keyboard'\u001b[39m,\n  \u001b[32m'Microphone USB'\u001b[39m,\n  \u001b[32m'Monitor 27\"'\u001b[39m,\n  \u001b[32m'Power Bank 20000mAh'\u001b[39m,\n  \u001b[32m'USB-C Cable'\u001b[39m,\n  \u001b[32m'Wireless Charger'\u001b[39m,\n  \u001b[32m'Wireless Mouse'\u001b[39m\n]\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "Product1 is added to cart\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "Product2 is added to cart\n"
-                    },
-                    {
-                      "text": "row count=1\n"
+                      "location": {
+                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                        "column": 14,
+                        "line": 8
+                      },
+                      "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14\u001b[22m"
                     }
                   ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-08T09:42:11.330Z",
+                  "startTime": "2026-06-19T18:24:20.737Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTestPOM--web-pl-5d93a-ario-tester-passthenote-com\\test-finished-1.png"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\trace.zip"
                     }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "db6036b61cd51ed02b8a-bf3625e206a319e67341",
-          "file": "PassthenoteTestPOM.spec.ts",
-          "line": 9,
-          "column": 9
-        },
-        {
-          "title": "@web playwright test: End to End scenario: admin@passthenote.com",
-          "ok": true,
-          "tags": [
-            "web",
-            "passthenote.com"
-          ],
-          "tests": [
-            {
-              "timeout": 40000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                    "column": 14,
+                    "line": 8
+                  }
+                },
                 {
                   "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 20710,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 666,
+                  "error": {
+                    "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14",
+                    "location": {
+                      "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                      "column": 14,
+                      "line": 8
                     },
+                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
                     {
-                      "text": "[\n  \u001b[32m'Bluetooth Headphones'\u001b[39m,\n  \u001b[32m'Desk Lamp LED'\u001b[39m,\n  \u001b[32m'Desk Mat'\u001b[39m,\n  \u001b[32m'Gaming Mouse'\u001b[39m,\n  \u001b[32m'Laptop Stand'\u001b[39m,\n  \u001b[32m'Mechanical Keyboard'\u001b[39m,\n  \u001b[32m'Microphone USB'\u001b[39m,\n  \u001b[32m'Monitor 27\"'\u001b[39m,\n  \u001b[32m'Power Bank 20000mAh'\u001b[39m,\n  \u001b[32m'USB-C Cable'\u001b[39m,\n  \u001b[32m'Wireless Charger'\u001b[39m,\n  \u001b[32m'Wireless Mouse'\u001b[39m\n]\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "Product1 is added to cart\n"
-                    },
-                    {
-                      "text": "product item is matched\n"
-                    },
-                    {
-                      "text": "Product2 is added to cart\n"
-                    },
-                    {
-                      "text": "row count=1\n"
+                      "location": {
+                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                        "column": 14,
+                        "line": 8
+                      },
+                      "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14\u001b[22m"
                     }
                   ],
+                  "stdout": [],
                   "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-08T09:42:11.335Z",
+                  "retry": 1,
+                  "startTime": "2026-06-19T18:24:23.450Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\abisw\\OneDrive\\Arpita\\abPlaywrightE2Eautomation\\test-results\\PassthenoteTestPOM--web-pl-27267-nario-admin-passthenote-com\\test-finished-1.png"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\trace.zip"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
+                    "column": 14,
+                    "line": 8
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "db6036b61cd51ed02b8a-0d5c1bf166e76536ff77",
-          "file": "PassthenoteTestPOM.spec.ts",
-          "line": 9,
-          "column": 9
+          "id": "cd753b2c1a1863f6b97c-8ea4b9aeec0247d2c4fe",
+          "file": "ui/products-ui.spec.ts",
+          "line": 5,
+          "column": 1
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-08T09:42:10.020Z",
-    "duration": 24149.872,
-    "expected": 2,
+    "startTime": "2026-06-19T18:24:20.096Z",
+    "duration": 4550.272000000001,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

@@ -5,16 +5,16 @@
 import { LoginPage } from "./LoginPage";
 import { ProductsListPage } from "./ProductsListPage";
 import { CartPage } from "./CartPage";
-import { OrderPlacePage } from "./OrderPlacePage";
+import { CheckoutPage } from "./CheckoutPage";
 import {Page} from "@playwright/test";
 
 export class POmanager
 {   
-    page:Page;
-    loginPage:LoginPage;
-    productsListPage:ProductsListPage;
-    cartPage:CartPage;
-    orderPlacePage:OrderPlacePage;
+    readonly page:Page;
+    readonly loginPage:LoginPage;
+    readonly productsListPage:ProductsListPage;
+    readonly cartPage:CartPage;
+    readonly checkoutPage:CheckoutPage;
 
     constructor(page:Page)
     {
@@ -22,7 +22,7 @@ export class POmanager
         this.loginPage=new LoginPage(this.page);     
         this.productsListPage=new ProductsListPage(this.page);
         this.cartPage=new CartPage(this.page);
-        this.orderPlacePage=new OrderPlacePage(this.page);
+        this.checkoutPage=new CheckoutPage(this.page);
     }
 
     getLoginPage()
@@ -40,11 +40,12 @@ export class POmanager
         return this.cartPage;
     }
 
-    getOrderPlacePage()
+    getCheckoutPage()
     {
-        return this.orderPlacePage;
+        return this.checkoutPage;
     }
 }
 
-module.exports={POmanager}
+// Use ES module exports (TypeScript). Removed CommonJS export to fix TS error.
+export default POmanager;
 

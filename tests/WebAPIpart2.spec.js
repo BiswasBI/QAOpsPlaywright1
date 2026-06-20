@@ -10,7 +10,7 @@ test.beforeAll(async({browser})=>
    await page.locator("[type='submit']").click();
    console.log(await page.title());
    await expect(page).toHaveTitle("PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site");
-await page.waitForTimeout(3000);
+   //await page.waitForTimeout(3000);
    await context.storageState({path:'state.json'});
    webContext= await browser.newContext({storageState:'state.json'});
 
