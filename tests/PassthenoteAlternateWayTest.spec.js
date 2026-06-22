@@ -112,6 +112,7 @@ test('playwright test: End to End scenario', async ({page})=> //annonimous funct
    await page.locator('div.p-5', {
   has: page.locator('h3', { hasText: productName })
 }).getByRole('button', { name: /Add to Cart/i }).click();
+
 await page.getByText(productName).getByRole("button",{name:"Add to Cart"}).click();
   /* const allTitles=await productTitle.allTextContents(); //- it will not show exceotion if element not loaded because it return an array, just return blank array list
    console.log(allTitles);

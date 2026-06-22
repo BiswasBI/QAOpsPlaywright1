@@ -9,15 +9,8 @@ test('Product cards render correctly',
         const poManager = new POmanager(page);
         const loginPage = poManager.getLoginPage();
         const productsListPage = poManager.getProductsListPage();
-         await loginPage.goTo();
-    await loginPage.validLogin('', '');
-
-        const cards =
-            page.locator('[data-testid="product-card"]');
-
-        await expect(cards.first()).toBeVisible();
-
-        const count = await cards.count();
-
-        expect(count).toBeGreaterThan(0);
+        await loginPage.goTo();
+        await loginPage.validLogin('tester@passthenote.com', 'Tester@123');
+        await productsListPage.navigateToProductsPage();
+        await productsListPage.productVisiblity();
     });

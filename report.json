@@ -61,13 +61,13 @@
   },
   "suites": [
     {
-      "title": "ui\\products-ui.spec.ts",
-      "file": "ui/products-ui.spec.ts",
+      "title": "ui\\responsive.spec.ts",
+      "file": "ui/responsive.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Product cards render correctly",
+          "title": "Mobile viewport",
           "ok": false,
           "tags": [],
           "tests": [
@@ -81,126 +81,118 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 935,
+                  "status": "timedOut",
+                  "duration": 42151,
                   "error": {
-                    "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n",
-                    "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14",
-                    "location": {
-                      "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                      "column": 14,
-                      "line": 8
-                    },
-                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
+                      "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
+                    },
+                    {
                       "location": {
-                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                        "column": 14,
-                        "line": 8
+                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\pageObjectsTS\\ProductsListPage.ts",
+                        "column": 23,
+                        "line": 20
                       },
-                      "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14\u001b[22m"
+                      "message": "Error: locator.hover: Test timeout of 40000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('text=Applicatio')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-dropdown=\"true\" data-testid=\"top-nav-applications-dropdown\" class=\"↵                      inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium↵                      transition-all duration-200↵                      text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800↵                    \">…</button>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    72 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pageObjectsTS\\ProductsListPage.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m    \u001b[36masync\u001b[39m navigateToProductsPage() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmenu\u001b[33m.\u001b[39mhover()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmenuOpton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"https://www.passthenote.com/app/products\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at ProductsListPage.navigateToProductsPage (C:\\Arpita\\abPlaywrightE2Eautomation\\pageObjectsTS\\ProductsListPage.ts:20:23)\u001b[22m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\responsive.spec.ts:18:28\u001b[22m"
                     }
                   ],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-19T18:24:20.737Z",
+                  "startTime": "2026-06-22T12:43:45.320Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\test-failed-1.png"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport\\test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\video.webm"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport\\video.webm"
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\error-context.md"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport\\error-context.md"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly\\trace.zip"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport\\trace.zip"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                    "column": 14,
-                    "line": 8
-                  }
+                  ]
                 },
                 {
                   "workerIndex": 1,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 666,
+                  "status": "timedOut",
+                  "duration": 43916,
                   "error": {
-                    "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n",
-                    "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14",
-                    "location": {
-                      "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                      "column": 14,
-                      "line": 8
-                    },
-                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
                   },
                   "errors": [
                     {
+                      "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
+                    },
+                    {
                       "location": {
-                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                        "column": 14,
-                        "line": 8
+                        "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\pageObjectsTS\\ProductsListPage.ts",
+                        "column": 23,
+                        "line": 20
                       },
-                      "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"/app/products\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/app/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m cards \u001b[33m=\u001b[39m\n \u001b[90m 11 |\u001b[39m     page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"product-card\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts:8:14\u001b[22m"
+                      "message": "Error: locator.hover: Test timeout of 40000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('text=Applicatio')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-dropdown=\"true\" data-testid=\"top-nav-applications-dropdown\" class=\"↵                      inline-flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium↵                      transition-all duration-200↵                      text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800↵                    \">…</button>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    75 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pageObjectsTS\\ProductsListPage.ts:20\n\n\u001b[0m \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m    \u001b[36masync\u001b[39m navigateToProductsPage() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmenu\u001b[33m.\u001b[39mhover()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmenuOpton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"https://www.passthenote.com/app/products\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at ProductsListPage.navigateToProductsPage (C:\\Arpita\\abPlaywrightE2Eautomation\\pageObjectsTS\\ProductsListPage.ts:20:23)\u001b[22m\n\u001b[2m    at C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\responsive.spec.ts:18:28\u001b[22m"
                     }
                   ],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "PassTheNote – Learn Test Automation Without Building Apps | Free Practice Site\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2026-06-19T18:24:23.450Z",
+                  "startTime": "2026-06-22T12:44:29.025Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\test-failed-1.png"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport-retry1\\test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\video.webm"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport-retry1\\video.webm"
                     },
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\error-context.md"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport-retry1\\error-context.md"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-products-ui-Product-cards-render-correctly-retry1\\trace.zip"
+                      "path": "C:\\Arpita\\abPlaywrightE2Eautomation\\test-results\\ui-responsive-Mobile-viewport-retry1\\trace.zip"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Arpita\\abPlaywrightE2Eautomation\\tests\\ui\\products-ui.spec.ts",
-                    "column": 14,
-                    "line": 8
-                  }
+                  ]
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "cd753b2c1a1863f6b97c-8ea4b9aeec0247d2c4fe",
-          "file": "ui/products-ui.spec.ts",
-          "line": 5,
+          "id": "2ecc0161325ff725dce9-9299b42284bfdc610ede",
+          "file": "ui/responsive.spec.ts",
+          "line": 6,
           "column": 1
         }
       ]
@@ -208,8 +200,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-19T18:24:20.096Z",
-    "duration": 4550.272000000001,
+    "startTime": "2026-06-22T12:43:44.511Z",
+    "duration": 89292.66399999999,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,

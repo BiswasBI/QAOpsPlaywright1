@@ -1,7 +1,7 @@
 import { test, expect, Page } from '@playwright/test'
 import { POmanager } from '../pageObjectsTS/POmanager';
 import {customTest} from '../Utils/test-base';
-import dataset from '../Utils/placeOrderTestData.json';
+import dataset from '../Utils/placeOrderTestData.json' with { type: 'json' };;
 
 for (const data of dataset) {
    test.only(`playwright test: End to End scenario: ${data.username}`, async ({ page }) => //annonimous function means function not having any name

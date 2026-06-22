@@ -1,5 +1,10 @@
 resource "aws_ecs_cluster" "playwright" {
   name = var.project_name
+
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
 }
 
 resource "aws_ecs_task_definition" "playwright" {
@@ -20,6 +25,8 @@ resource "aws_ecs_task_definition" "playwright" {
       image = "${aws_ecr_repository.playwright.repository_url}:latest"
 
       essential = true
+
+      readonlyRootFilesystem = true
 
       environment = [
         {

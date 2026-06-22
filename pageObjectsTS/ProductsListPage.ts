@@ -5,30 +5,49 @@ export class ProductsListPage {
    readonly page: Page;
    readonly menu: Locator;
    readonly menuOpton: Locator;
+   readonly productCards: Locator;
 
    constructor(page: Page) {
       this.page = page;
-
       this.menu = page.locator('text=Applicatio')
       this.menuOpton = page.locator('text=E-Commer');
+      this.productCards = page.locator('[data-testid*="product"]');
 
    }
 
-  async navigate() {
-    await this.page.goto('/app/products');
-  }
 
-  async addFirstProductToCart() {
-    await this.page.locator('button').filter({
-      hasText: /add to cart/i
-    }).first().click();
-  }
+   async navigateToProductsPage() {
+      await this.menu.hover();
+      await this.menuOpton.click();
+      await expect(this.page).toHaveURL("https://www.passthenote.com/app/products");
+      await this.page.waitForLoadState('networkidle');
+   }
 
-  async verifyProductsVisible() {
-    await expect(
-      this.page.locator('[data-testid="product-card"]')
-    ).not.toHaveCount(0);
-  }
+   async addFirstProductToCart() {
+      await this.page.locator('button').filter({
+         hasText: /add to cart/i
+      }).first().click();
+   }
+
+   async verifyProductsVisible() {
+      await expect(
+         this.productCards
+      ).not.toHaveCount(0);
+   }
+
+   async productVisiblity() {
+      //await this.menu.hover();
+      //await this.menuOpton.click();
+      //await this.page.pause();
+      //await expect(this.page).toHaveURL("https://www.passthenote.com/app/products");
+      //await this.page.waitForLoadState('networkidle');
+      const cards = this.productCards;
+      //await expect(cards).toBeVisible(); //here it expecting single element, but we have multiple elements, so it will not work, so we need to use count to verify the visibility of all elements, if count is greater than 0 then it means all elements are visible, if count is 0 then it means all elements are not visible, so we need to use count to verify the visibility of all elements.
+      const count = await cards.count();
+      console.log('Total product count is: ' + count);
+      await expect(count).toBeGreaterThan(0); //need await , otherwise return 0 elemts due to typesctip asynchronous behaviour, it will not wait for count and return 0, so need to await to get actual count value. if we not use await then it will not show exception because of 0 count, but if we use await then it will show exception because of 0 count. so need to use await to get actual count value and show exception if count is 0.
+
+   }
 
    async productsAdd(productName1: string, productName2: string) {
       const products = this.page.locator('[data-testid*="product"]');
@@ -38,7 +57,7 @@ export class ProductsListPage {
       //await this.page.pause();
       await expect(this.page).toHaveURL("https://www.passthenote.com/app/products");
       await this.page.waitForLoadState('networkidle');
-      await productTitle.first().waitFor(); //-it will not work because of multiple elements
+     //await productTitle.first().waitFor(); //-it will not work because of multiple elements
 
       const allTitles = await productTitle.allTextContents(); //- it will not show exceotion if element not loaded because it return an array, just return blank array list
       console.log(allTitles);
