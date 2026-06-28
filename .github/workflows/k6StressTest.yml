@@ -1,4 +1,3 @@
-# Only dedicated for:  workflow builds a k6 image for stress testing and pushes it to AWS ECR.
 name: Build k6 Image for Stress Testing
 
 on:
@@ -6,13 +5,15 @@ on:
 
 jobs:
   build-k6:
-
     runs-on: ubuntu-latest
 
-    steps:
+    env:
+      ECR_REPOSITORY: k6-runner
 
+    steps:
       - uses: actions/checkout@v4
 
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -24,17 +25,17 @@ jobs:
 
       - name: Build k6 Image
         run: |
-         docker build \
-           -t $ECR_REPOSITORY \
-           -f k6/Dockerfile.k6Stress1000vus \
-           ./k6
+          docker build \
+            -t $ECR_REPOSITORY:latest \
+            -f k6/Dockerfile.k6Stress1000vus \
+            ./k6
 
       - name: Tag Image
         run: |
-          docker tag k6-runner:latest \
-          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
+          docker tag $ECR_REPOSITORY:latest \
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
 
       - name: Push Image
         run: |
           docker push \
-          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
