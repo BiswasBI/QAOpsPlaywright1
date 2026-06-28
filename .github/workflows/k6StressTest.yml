@@ -18,12 +18,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-
+      - name: Login to Amazon ECR
       - uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build k6 Image
         run: |
-          docker build -t k6-runner ./k6
+         docker build \
+           -t $ECR_REPOSITORY \
+           -f k6/Dockerfile.k6Stress1000vus \
+           ./k6
 
       - name: Tag Image
         run: |

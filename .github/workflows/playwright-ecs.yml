@@ -68,10 +68,22 @@ jobs:
            s3://${{ secrets.S3_BUCKET }}/k6/ci/k6-results-${{ github.run_id }}.json
 
      # Build k6 image
-     - name: Build k6 Docker Image
+     #- name: Build k6 Docker Image
+     #  run: |
+     #    docker build -t k6-runner ./k6
+     - name: Build k6 Docker Image for 50 vus
        run: |
-         docker build -t k6-runner ./k6
+         docker build \
+         -t k6-load \
+         -f k6/Dockerfile.k6Load50vus \
+         ./k6
 
+     - name: Run k6 Load Test
+       run: |
+         docker run --rm \
+         -e BASE_URL=${{ secrets.BASE_URL }} \
+         k6-load
+         
      # Login to ECR
      - name: Login to Amazon ECR
        uses: aws-actions/amazon-ecr-login@v2
