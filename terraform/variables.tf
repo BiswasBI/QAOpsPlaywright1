@@ -7,5 +7,4 @@ variable "project_name" {
 }
 
 variable "base_url" {}
-variable "aws_region" {}
 variable "s3_bucket_arn" {}

@@ -7,7 +7,6 @@ resource "aws_ecr_repository" "playwright" {
 
   }
 
-
   encryption_configuration {
     encryption_type = "KMS"
     kms_key         = aws_kms_key.ecr.arn
@@ -17,6 +16,17 @@ resource "aws_ecr_repository" "playwright" {
     ManagedBy = "Terraform"
     Security  = "Enabled"
   }
+}
+
+
+resource "aws_ecr_repository" "k6" {
+  name = "k6-runner"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+
+  force_delete = true
 }
 
 resource "aws_ecr_lifecycle_policy" "playwright" {

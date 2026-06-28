@@ -1,4 +1,5 @@
 #Create an ECS task that runs k6
+
 resource "aws_ecs_task_definition" "k6" {
   family                   = "k6-stress-test"
   requires_compatibilities = ["FARGATE"]
