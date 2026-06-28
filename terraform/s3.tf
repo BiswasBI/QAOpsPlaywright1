@@ -50,17 +50,34 @@ resource "aws_iam_role_policy_attachment" "playwright_s3" {
   policy_arn = aws_iam_policy.playwright_s3.arn
 }
 
+
 resource "aws_iam_policy" "k6_s3_policy" {
-  name = "k6-s3-policy"
+  name = "${var.project_name}-k6-s3-policy"
 
   policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [{
-      Effect = "Allow",
-      Action = [
-        "s3:PutObject"
-      ],
-      Resource = "${var.s3_bucket_arn}/*"
-    }]
+    Version = "2012-10-17"
+
+    Statement = [
+      {
+        Effect = "Allow"
+
+        Action = [
+          "s3:ListBucket"
+        ]
+
+        Resource = aws_s3_bucket.playwright_reports.arn
+      },
+
+      {
+        Effect = "Allow"
+
+        Action = [
+          "s3:GetObject",
+          "s3:PutObject"
+        ]
+
+        Resource = "${aws_s3_bucket.playwright_reports.arn}/*"
+      }
+    ]
   })
 }
