@@ -8,8 +8,8 @@ RUN apk add --no-cache python3 py3-pip bash && \
 
 WORKDIR /app
 
-COPY tests/stressTest.js /app/stressTest.js
-COPY upload.sh /app/upload.sh
+COPY k6/load/stressTest.js /app/stressTest.js
+COPY k6/upload.sh /app/upload.sh
 
 RUN chmod +x /app/upload.sh
 
