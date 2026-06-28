@@ -1,0 +1,19 @@
+# For Local load testing of the application using k6, this workflow runs a k6 Docker container and executes the load test script located in the tests/load directory of the repository.
+name: k6 Local Load Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  k6-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run k6 Docker container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/tests/load:/scripts \
+            grafana/k6 run /scripts/ciTest.js

@@ -169,9 +169,12 @@ Slack and Teams notifications
 Test impact analysis
 
 This project follows a full DevSecOps approach with multi-layer security scanning.
+👉 [View DevSecOps overview](docs/DEVSECOPS.md)
 Detailed security scan reports and findings are documented here:
-👉 [View DevSecOps Security Report](docs/DEVSECOPS.md)
-
+👉 [View DevSecOps Security Report](docs/SECURITY_REPORT.md)
+Performance test including load+stress included in the DEVSECOPS PIPELINE
+👉 [View Performance testing with k6 overview here](docs/k6PerformanceTest.md)
+👉 [View Load and Stress Report here](docs/k6PerformanceTestReport.md)
 
 Author
 Arpita Biswas

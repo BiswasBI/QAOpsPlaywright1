@@ -1,0 +1,16 @@
+FROM grafana/k6:latest
+
+USER root
+
+# Install AWS CLI
+RUN apk add --no-cache python3 py3-pip bash && \
+    pip3 install awscli --break-system-packages
+
+WORKDIR /app
+
+COPY tests/stressTest.js /app/stressTest.js
+COPY upload.sh /app/upload.sh
+
+RUN chmod +x /app/upload.sh
+
+ENTRYPOINT ["/app/upload.sh"]

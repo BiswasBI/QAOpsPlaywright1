@@ -37,10 +37,57 @@ jobs:
        id: login-ecr
        uses: aws-actions/amazon-ecr-login@v2
 
+    # - name: Build Docker Image
+    #   run: |
+    #     docker build -t playwright-tests .
+    #To improve with caching speed, instead above, replaced below code  to build docker image with caching
      - name: Build Docker Image
-       run: |
-         docker build -t playwright-tests .
+       uses: docker/build-push-action@v5
+       with:
+        context: .
+        tags: playwright-tests:latest
+        load: true
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
 
+     - name: Run CI k6 Load Test
+       run: |
+          mkdir -p k6-report
+
+          docker run --rm \
+            -v ${{ github.workspace }}/tests/load/ci:/load \
+            -v ${{ github.workspace }}/k6-report:/report \
+            -e BASE_URL=${{ secrets.BASE_URL }} \
+            grafana/k6 run \
+            --out json=/report/k6-results.json \
+            /load/ciTest.js
+     - name: Upload CI k6 Report to S3
+       run: |
+         aws s3 cp \
+           k6-report/k6-results.json \
+           s3://${{ secrets.S3_BUCKET }}/k6/ci/k6-results-${{ github.run_id }}.json
+
+     # Build k6 image
+     - name: Build k6 Docker Image
+       run: |
+         docker build -t k6-runner ./k6
+
+     # Login to ECR
+     - name: Login to Amazon ECR
+       uses: aws-actions/amazon-ecr-login@v2
+
+     # Tag image
+     - name: Tag k6 Image
+       run: |
+         docker tag k6-runner:latest \
+         ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
+
+     # Push image
+     - name: Push k6 Image
+       run: |
+         docker push \
+         ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/k6-runner:latest
+     
      # 5. Trivy scan (container security)
      - name: Scan Docker image (Trivy)
        uses: aquasecurity/trivy-action@master
@@ -103,3 +150,14 @@ jobs:
              securityGroups=[${{ secrets.SECURITY_GROUP_ID }}],
              assignPublicIp=ENABLED
            }"
+
+      # =========================
+# STRESS TEST (1000+ VUs)
+# =========================
+     - name: Trigger ECS k6 Stress Test
+       run: |
+         aws ecs run-task \
+           --cluster ${{ secrets.ECS_CLUSTER }} \
+           --launch-type FARGATE \
+           --task-definition k6-stress-test \
+           --network-configuration "awsvpcConfiguration={subnets=[${{ secrets.SUBNETS }}],securityGroups=[${{ secrets.SECURITY_GROUP }}],assignPublicIp=ENABLED}"

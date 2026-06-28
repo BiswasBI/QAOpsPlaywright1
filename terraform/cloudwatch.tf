@@ -4,3 +4,8 @@ resource "aws_cloudwatch_log_group" "playwright" {
 
   kms_key_id = aws_kms_key.cloudwatch.arn
 }
+
+resource "aws_cloudwatch_log_group" "k6" {
+  name              = "/ecs/k6"
+  retention_in_days = 7
+}

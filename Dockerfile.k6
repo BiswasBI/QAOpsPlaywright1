@@ -1,0 +1,8 @@
+FROM grafana/k6:latest
+
+WORKDIR /app
+
+#COPY tests ./tests
+COPY k6/load ./k6/load
+
+CMD ["run", "/app/k6/load/ciTest.js"]

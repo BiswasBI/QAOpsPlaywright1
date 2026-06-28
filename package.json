@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-   "type": "module",
+  "type": "module",
   "scripts": {
     "regression": "npx playwright test",
     "apiTestdebug": "npx playwright test tests/WebAPIpart1RShetty.spec.js --headed",
@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.9.3",
     "allure-commandline": "^2.40.0",
